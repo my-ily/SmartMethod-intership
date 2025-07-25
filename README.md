@@ -1,43 +1,83 @@
-# task1-mech
-# 3D Cup Design Project using Onshape
+# Four DC Motors Control with L293D and Arduino Uno
 
-## Overview
-This project was completed as part of the **3D Design using Onshape** course requirements. The goal was to design a 3D cup using a combination of essential and advanced tools provided by the Onshape platform.
+## Project Overview
 
----
+This project focuses on the implementation of a system to control four DC motors using an L293D motor driver and an Arduino Uno. The project demonstrates how to program and control motor movements in different directions and durations, showcasing practical applications of embedded systems and motor control.
 
-## Tools Used
-The following tools were utilized to create the 3D cup:
-1. **Extrude Add**: To create the base structure of the cup.
-2. **Extrude Remove**: To hollow out the interior of the cup.
-3. **Sweep**: To design the handle of the cup using a curved path.
-4. **Shell**: To make the cup hollow with a specific wall thickness.
-5. **Fillet**: To smooth edges and enhance the aesthetic and ergonomic design.
+## Objectives
 
----
+1. Move the motors forward for a duration of 30 seconds.
+2. Move the motors backward for a duration of 1 minute.
+3. Alternate motor directions between right and left for a duration of 1 minute, with a half-second interval for each direction.
 
-## Design Description
-- **Base of the Cup**: The main body of the cup was created using **Extrude Add**, and the interior was hollowed out using **Extrude Remove** and **Shell**.
-- **Handle**: The handle was designed using **Sweep** along a curved path, with **Fillet** applied to smooth the connection between the handle and the cup.
+## Components and Tools
 
----
-## Real-life Cup Image
-Here is a real-life photo of the cup:  
-![AKLOV Color Ceramic Coffee Mug Ceramic in Blue _ 20oz _ Wayfair](https://github.com/user-attachments/assets/1b5dd154-3013-46fd-89fc-8a07af9ca96c)
+### Hardware:
+- Arduino Uno (microcontroller board)
+- L293D Motor Driver (for motor control)
+- Four DC Motors
+- Breadboard
+- 9V Battery (for power supply)
+- Jumper Wires (for circuit connections)
 
+### Software:
+- Arduino IDE (for programming and uploading code)
+- Tinkercad (for simulation and circuit design, optional)
 
----
+## Circuit Description
 
-## Final Design Image
-![‪cup task1 _ Part Studio 1 - Google Chrome‬ 1_19_2025 1_06_18 PM](https://github.com/user-attachments/assets/918b6bea-d86c-45cd-8703-09a11a21a9db)
+The circuit connects the L293D motor driver to the Arduino Uno to control the direction and speed of the motors. Power is supplied to the motors via a 9V battery. Each motor is connected to the motor driver’s output pins, while the input pins are controlled by the Arduino’s digital pins. The direction of the motors is managed by setting the input pins to HIGH or LOW.
 
----
+### Pin Configuration:
+
+| Motor    | Input Pin 1 | Input Pin 2 |
+|----------|-------------|-------------|
+| Motor A  | Pin 2       | Pin 3       |
+| Motor B  | Pin 4       | Pin 5       |
+
+## Code Explanation
+
+The program written in C++ controls the motors by sending signals to the L293D driver through the Arduino. The main logic includes:
+
+1. **Forward Movement**: Setting specific input pins to HIGH or LOW to drive the motors forward for 30 seconds.
+2. **Backward Movement**: Reversing the input pin states to drive the motors backward for 1 minute.
+3. **Alternating Directions**: Alternating the motor directions between right and left every 0.5 seconds for a total of 1 minute using a `for` loop.
+
+The code includes `delay()` functions to control the duration of each movement.
+
+## How to Run the Project
+
+### 1. Assemble the Circuit:
+- Connect the L293D motor driver to the Arduino and DC motors as per the pin configuration above.
+- Use a breadboard for proper wiring and connections.
+- Attach the 9V battery to supply power to the motors.
+
+### 2. Upload the Code:
+- Open the Arduino IDE.
+- Copy the provided code into a new sketch.
+- Connect the Arduino Uno to your computer via USB and upload the code.
+
+### 3. Test the System:
+- Observe the motors performing the specified movements in the order described.
+
+## Applications
+
+This project demonstrates the basic principles of motor control, which can be extended to various applications, such as:
+
+- Robotics
+- Conveyor belt systems
+- Automated vehicles
+
+## Future Enhancements
+
+- Integrating sensors (e.g., ultrasonic sensors) for obstacle detection.
+- Adding PWM (Pulse Width Modulation) for speed control.
+- Using wireless modules (e.g., Bluetooth or Wi-Fi) for remote control.
 
 ## Project Link
-https://cad.onshape.com/documents/b51cce7b59b9f9b11bbde7e0/w/3fe0cce5f07efcea264fca81/e/7f8509da2e037089c377170d?renderMode=0&uiState=678f742bbaea514d3baee37a
 
+To view the project files and code, click here.
 
----
-
+https://www.tinkercad.com/things/eK2gh5HeOBb-task2-dc-motor
 
 
